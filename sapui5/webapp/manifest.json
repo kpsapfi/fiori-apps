@@ -87,33 +87,51 @@
         "clearControlAggregation": false
       },
       "routes": [
-        {
-          "name": "RouteView1",
-          "pattern": ":?query:",
-          "target": [
-            "TargetView1"
-          ]
+                {
+                  "name": "RouteView1",
+                  "pattern": "RouteView1",
+                  "target": [
+                    "TargetView1"
+                    ]
+                },
+                {
+                    "name": "home",
+                    "pattern": "",
+                    "target": [
+                        "TargetList"
+                        ]
+                },
+                {
+                    "name": "detail",
+                    "pattern": "product/{productId}",
+                    "target": [
+                        "TargetDetail"
+                        ]
+                }
+            ],
+            "targets": {
+                "TargetView1": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "View1",
+                    "viewName": "View1"
+                },
+                "TargetList": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewName": "List",
+                    "viewId" : "List"
+                },
+                "TargetDetail": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewName": "Detail",
+                    "viewId": "Detail"
+                }
+            }
         }
-      ],
-      "targets": {
-        "TargetView1": {
-          "viewType": "XML",
-          "transition": "slide",
-          "clearControlAggregation": false,
-          "viewId": "View1",
-          "viewName": "View1"
-        }
-      }
-    },
-    "rootView": {
-      "viewName": "sap.btp.sapui5.view.App",
-      "type": "XML",
-      "async": true,
-      "id": "App"
     }
-  },
-  "sap.cloud": {
-    "public": true,
-    "service": "sapbtpsapui5"
-  }
 }
